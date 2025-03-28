@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appetizers - Recipe Finder</title>
+    <link rel="icon" type="image/png" href="images/logo3.jpg">
+    <link rel="stylesheet" href="categories.css">
+</head>
+<body style="background: url('images/appetizers.jpg') no-repeat center center fixed; background-size: cover; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px;">
+<nav>
+    <div class="logo">
+        <video autoplay loop muted>
+            <source src="images/logo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipe_admin.html">Recipe</a></li>
+        <li><a href="add_recipe.html">Add New Recipe</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-list">
+    <h2>Appetizers</h2>
+    <div id="appetizers-container"></div>
+</div>
+
+<div class="popup-overlay" id="editPopupOverlay"></div>
+<div class="popup" id="editPopup">
+    <h3>Edit Recipe</h3>
+    <form id="editForm">
+        <input type="text" id="editName" placeholder="Recipe Name" required>
+        <textarea id="editDescription" placeholder="Description" required></textarea>
+        <h4>Ingredients:</h4>
+        <textarea id="editIngredients" placeholder="Ingredients" required></textarea>
+        <h4>Instructions:</h4>
+        <textarea id="editInstructions" placeholder="Instructions" required></textarea>
+        <button type="submit">Save Changes</button>
+        <a href="#" class="cancel-button" onclick="closeEditPopup()">Cancel</a>
+    </form>
+</div>
+
+<div class="popup-overlay" id="deletePopupOverlay"></div>
+<div class="popup" id="deletePopup">
+    <h3>Delete Recipe</h3>
+    <p>Are you sure you want to delete this recipe?</p>
+    <a href="#" class="delete-button" onclick="confirmDelete()">Yes, Delete</a>
+    <a href="#" class="cancel-button" onclick="closeDeletePopup()">Cancel</a>
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

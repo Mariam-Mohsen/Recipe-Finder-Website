@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Dishes</title>
+    <link rel="icon" type="image/png" href="images/logo3.jpg" />
+    <link rel="stylesheet" href="Recipes.css" />
+  </head>
+  <body
+    style="
+      background: url('images/main dish.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    "
+  >
+    <nav>
+      <a href="index.html">
+        <img src="images/home_icon.png" alt="Home" class="home-icon" />
+      </a>
+      <a href="profile.html">
+        <img src="images/user_avatar.png" alt="Profile" class="user-icon" />
+      </a>
+      <div class="search-container">
+        <input
+         type="text"
+          class="search-bar"
+          placeholder="Search for recipes..."
+          id="searchInput"
+        />
+      </div>
+      <ul>
+        <li><a href="User_main_dish.html">Main Dish</a></li>
+        <li><a href="User_Soup.html">Soup</a></li>
+        <li><a href="User_Appetizers.html">Appetizers</a></li>
+        <li><a href="User_Dessert.html">Dessert</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h1>Main Dishes</h1>
+      <div id="recipe-container" class="recipe-page"></div>
+    </section>
+
+    <div id="fullRecipeView" class="full-recipe-view">
+      <span class="close-search" onclick="closeFullRecipe()">&times;</span>
+      <div id="fullRecipeContent" class="full-recipe-content"></div>
+    </div>
+
+    <script src="user.js"></script>
+    <script src="search.js"></script>
+  </body>
+</html>

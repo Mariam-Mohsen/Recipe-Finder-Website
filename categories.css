@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px;
+    height: 70px;
+}
+
+.logo video {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 8px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.recipe-list {
+    max-width: 750px;
+    margin: 120px auto 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.recipe-list h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.recipe-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.recipe-item:last-child {
+    border-bottom: none;
+}
+
+.recipe-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.recipe-item h3 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.recipe-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.recipe-actions a {
+    padding: 8px 16px;
+    background: #700b11;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.recipe-actions a:hover {
+    background: #8a0e15;
+}
+
+.recipe-details {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(249, 249, 249, 0.8);
+    border-radius: 5px;
+    border: 1px solid rgba(221, 221, 221, 0.5);
+    width: 100%;
+    text-align: left;
+}
+
+.recipe-details h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.recipe-details ul, .recipe-details ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.recipe-details li {
+    margin-bottom: 5px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup:target, .popup-overlay:target {
+    display: block;
+}
+
+.popup h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18px;
+}
+
+.popup input, .popup textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.popup button, .popup a {
+    padding: 10px 20px;
+    background: #700b11;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.popup button:hover, .popup a:hover {
+    background: #8a0e15;
+}
+
+.popup .cancel-button {
+    background: #ccc;
+    color: #333;
+}
+
+.popup .cancel-button:hover {
+    background: #bbb;
+}

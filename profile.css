@@ -1,0 +1,232 @@
+/* Profile Buttons */
+.profile-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px;
+    margin-top: 20px;
+}
+/* Profile image styling */
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit form image preview */
+#image-preview {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 15px;
+    display: none;
+}
+.edit-profile-btn, .favorites-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-btn:hover, .favorites-btn:hover {
+    background-color: #0056b3;
+}
+
+/*Edit Profile*/
+/* Edit Profile Form Styling */
+.profile-card form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #FFF; /* Dark text for labels */
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* White background for input */
+    color: #333; /* Dark text for input */
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* White background for file input */
+    color: #333; /* Dark text for file input */
+}
+
+.save-profile-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full-width button */
+}
+
+.save-profile-btn:hover {
+    background-color: #0056b3;
+}
+/* Favorites Section */
+.favorites-section {
+    padding: 40px 20px;
+    background-color: #000; /* Black background */
+    text-align: center;
+    color: #fff; /* White text for better contrast */
+}
+
+.favorites-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff; /* White text for the heading */
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.carousel-item p {
+    font-size: 18px;
+    color: #000; /* White text for recipe names */
+    padding: 0 20px; /* Add padding to push text inward */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Light background for buttons */
+    color: #000; /* Black text for buttons */
+    border: none;
+    padding: 15px; /* Increased padding for better spacing */
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 10; /* Ensure buttons are above the carousel items */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Lighter background on hover */
+}
+
+/* Recipe Image Hover Effect */
+.carousel-item {
+    position: relative;
+    text-align: center;
+}
+
+.recipe-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 55px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item:hover .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-item:hover .recipe-image {
+    transform: scale(1.05);
+}
+
+.popup h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.popup p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.popup ul, .popup ol {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.popup ul li, .popup ol li {
+    margin: 5px 0;
+    color: #555;
+}
