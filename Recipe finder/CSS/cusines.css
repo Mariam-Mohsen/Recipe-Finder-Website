@@ -1,0 +1,288 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(10px); 
+    z-index: 1000;
+    padding: 20px 40px; 
+}
+body{
+    background-color: black;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo video {
+    width: 55px; 
+    height: auto;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; 
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; 
+}
+
+
+.egyptian-cuisine {
+    padding: 40px 20px; 
+    text-align: center;
+    background: url('../images/egyptian food.jpg') no-repeat center center/cover; 
+    position: relative;
+    margin-top: 100px; 
+}
+
+.egyptian-cuisine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.egyptian-cuisine h1 {
+    font-size: 3rem; 
+    color: #fff; 
+    margin-bottom: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+.indian-cuisine {
+    padding: 100px 20px; 
+    text-align: center;
+    background: url('../images/indian.jpg') no-repeat center center/cover; 
+    position: relative;
+    
+     
+}
+
+.indian-cuisine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    z-index: 0;
+}
+
+.indian-cuisine h1 {
+    font-size: 3rem; 
+    color: #fff; 
+    margin-bottom: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+.mexican-cuisine {
+    padding: 40px 20px; 
+    text-align: center;
+    background: url('../images/mexican.jpg') no-repeat center center/cover; 
+    position: relative;
+    
+}
+
+.mexican-cuisine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    z-index: 0;
+}
+
+.mexican-cuisine h1 {
+    font-size: 3rem; 
+    color: #fff; 
+    margin-bottom: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+.italian-cuisine {
+    padding: 40px 20px; 
+    text-align: center;
+    background: url('../images/italian.jpg') no-repeat center center/cover; 
+    position: relative;
+   
+}
+
+.italian-cuisine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    z-index: 0;
+}
+
+.italian-cuisine h1 {
+    font-size: 3rem; 
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.category {
+    margin-bottom: 50px; 
+    position: relative;
+    z-index: 1;
+}
+
+.category h2 {
+    font-size: 2.5rem; 
+    color: #ffcc00; 
+    margin-bottom: 30px;
+}
+
+.meal-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.meal {
+    display: inline-block;
+    width: 450px; 
+    height: 450px;
+    margin: 20px;
+    padding: 20px; 
+     
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 15px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    text-align: left; 
+    overflow: hidden; 
+    position: relative; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.meal:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+
+.square-photo {
+    width: 100%; 
+    height: 220px;
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; 
+}
+
+.meal:hover .square-photo {
+    transform: scale(1.1); 
+}
+
+.meal h3 {
+    font-size: 2rem; 
+    color: #333;
+    margin-bottom: 15px;
+    transition: color 0.3s ease; 
+}
+
+.meal:hover h3 {
+    color: #ffcc00; 
+}
+
+.meal p {
+    font-size: 1.2rem; 
+    color: #666;
+    transition: color 0.3s ease; 
+}
+
+.meal:hover p {
+    color: #333; 
+}
+
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 15px; 
+    padding: 20px;
+    padding-left: 30px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+    z-index: 2;
+    overflow-y: auto; 
+}
+
+.meal:hover .popup {
+    opacity: 1; 
+    visibility: visible; 
+}
+
+
+
+.popup h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+
+}
+
+.popup p {
+    font-size: 1.1rem; 
+    color: #666;
+    margin-bottom: 10px;
+    padding-left: 2rem;
+}
+
+.popup ul, .popup ol {
+    text-align: left; 
+    margin-bottom: 15px;
+}
+
+.popup ul li, .popup ol li {
+    font-size: 1rem; 
+    color: #666;
+    margin-bottom: 5px;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="icon" type="image/png" href="../images/logo3.jpg">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/profile.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class= "logo">
+      <video autoplay loop muted playsinline>
+        <source src="../images/logo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="User_main_dish.html">Recipes</a></li>
+      <li><a href="index.html">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="intro">
+  <div class="overlay"></div>
+  <div class="intro-content">
+    <main class="profile-container">
+      <h1>User Profile</h1>
+      <div class="profile-card">
+        <img id="profile-avatar" src="../images/user_avatar.png" alt="User Avatar" class="profile-avatar">
+        <h2 id="profile-username">Ahmed Elmokadem</h2>
+        <p>Email: ahmeddelmokademm@gmail.com</p>
+        <p>Member since: March 2025</p>
+        <div class="profile-buttons">
+          <button class="edit-profile-btn" onclick="location.href='edit_profile.html'">Edit Profile</button>
+          <button class="favorites-btn" onclick="scrollToFavorites()">Favorites</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+
+<section id="favorites-section" class="favorites-section">
+  <h2>Favorite Recipes</h2>
+  <div class="carousel">
+    <div class="carousel-inner">
+    </div>
+    <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+</section>
+
+<script src="../Java/carousel.js"></script>
+<script src="../Java/profile.js"></script>
+
+</body>
+</html>
