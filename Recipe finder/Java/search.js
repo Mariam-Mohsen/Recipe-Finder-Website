@@ -46,17 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
       // Search in all categories
       for (const category in recipesData) {
         if (Array.isArray(recipesData[category])) {
-          // Main categories (appetizers, soups, etc.)
           recipesData[category].forEach((recipe) => {
-            if (recipe.name.toLowerCase().includes(searchTerm)) {
+            if (recipeMatches(recipe, searchTerm)) {
               foundRecipes.push(recipe);
             }
           });
         } else if (typeof recipesData[category] === "object") {
-          // Cuisine categories (egyptian, italian, etc.)
           for (const subCategory in recipesData[category]) {
             recipesData[category][subCategory].forEach((recipe) => {
-              if (recipe.name.toLowerCase().includes(searchTerm)) {
+              if (recipeMatches(recipe, searchTerm)) {
                 foundRecipes.push(recipe);
               }
             });
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (foundRecipes.length > 0) {
-        displayFullRecipe(foundRecipes[0], searchTerm);
+        displayFullRecipes(foundRecipes, searchTerm);
       } else {
         showNoResults(`No recipes found matching "${searchTerm}"`);
       }
@@ -75,15 +73,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function displayFullRecipe(recipe, searchTerm) {
-    const highlightedName = highlightText(recipe.name, searchTerm);
-    const highlightedDesc = recipe.description
-      ? highlightText(recipe.description, searchTerm)
-      : "";
+  function recipeMatches(recipe, searchTerm) {
+    const nameMatch = recipe.name.toLowerCase().includes(searchTerm);
+    const ingredientsMatch = recipe.ingredients.some((ing) =>
+      ing.toLowerCase().includes(searchTerm)
+    );
+    return nameMatch || ingredientsMatch;
+  }
 
-    fullRecipeContent.innerHTML = `
+  function displayFullRecipes(recipes, searchTerm) {
+    fullRecipeContent.innerHTML = recipes
+      .map((recipe) => {
+        const highlightedName = highlightText(recipe.name, searchTerm);
+        const highlightedDesc = recipe.description
+          ? highlightText(recipe.description, searchTerm)
+          : "";
+        const highlightedIngredients = recipe.ingredients.map((ing) =>
+          highlightText(ing, searchTerm)
+        );
+
+        return `
+          <div class="recipe-card">
             <div class="recipe-image">
-                <img src="${recipe.image}" alt="${recipe.name}">
+              <img src="${recipe.image}" alt="${recipe.name}">
             </div>
             <h2>${highlightedName}</h2>
             ${
@@ -92,22 +104,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 : ""
             }
             <div class="ingredients">
-                <h3>Ingredients</h3>
-                <ul>
-                    ${recipe.ingredients
-                      .map((ing) => `<li>${ing}</li>`)
-                      .join("")}
-                </ul>
+              <h3>Ingredients</h3>
+              <ul>
+                ${highlightedIngredients.map((ing) => `<li>${ing}</li>`).join("")}
+              </ul>
             </div>
             <div class="instructions">
-                <h3>Instructions</h3>
-                <ol>
-                    ${recipe.instructions
-                      .map((step) => `<li>${step}</li>`)
-                      .join("")}
-                </ol>
+              <h3>Instructions</h3>
+              <ol>
+                ${recipe.instructions
+                  .map((step) => `<li>${step}</li>`)
+                  .join("")}
+              </ol>
             </div>
+          </div>
         `;
+      })
+      .join("");
   }
 
   function highlightText(text, term) {
