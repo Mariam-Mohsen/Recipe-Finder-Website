@@ -2,6 +2,7 @@
   "egyptian": {
     "main course": [
       {
+        "id":1,
         "name": "Koshari",
         "image": "../images/koshary.jpg",
         "description": "A traditional Egyptian dish made with rice, lentils, pasta, and a spicy tomato sauce.",
@@ -646,26 +647,9 @@
     ]
   },
   "main_dishes": [
+    
     {
-      "name": "Teriyaki Chicken",
-      "image": "../images/teriyaki_chicken.jpg",
-      "description": "Grilled chicken glazed with a sweet and savory teriyaki sauce.",
-      "ingredients": [
-        "4 chicken thighs",
-        "1/2 cup soy sauce",
-        "1/4 cup mirin",
-        "2 tbsp sugar",
-        "1 tbsp ginger, grated",
-        "2 cloves garlic, minced"
-      ],
-      "instructions": [
-        "Mix soy sauce, mirin, sugar, ginger, and garlic to make the teriyaki sauce.",
-        "Marinate chicken in half the sauce for 30 minutes.",
-        "Grill chicken until cooked through, brushing with remaining sauce.",
-        "Serve with steamed rice and vegetables."
-      ]
-    },
-    {
+      "id":"1_1",
       "name": "Spaghetti Carbonara",
       "image": "../images/spaghetti carbonara.jpg",
       "description": "A classic Italian pasta dish.",
@@ -686,6 +670,7 @@
       ]
     },
     {
+      "id":"1_2",
       "name": "Chicken Tikka Masala",
       "image": "../images/paneer_tikka.jpg",
       "description": "A creamy and flavorful Indian dish.",
@@ -706,6 +691,7 @@
       ]
     },
     {
+      "id":"1_3",
       "name": "Beef Tacos",
       "image": "../images/beef-tacos.jpg",
       "description": "A classic Mexican dish with seasoned beef and toppings.",
@@ -725,6 +711,7 @@
       ]
     },
     {
+      "id":"1_4",
       "name": "Sushi Rolls",
       "image": "../images/sushi-rolls.jpg",
       "description": "A Japanese dish with rice, fish, and vegetables.",
@@ -745,6 +732,7 @@
       ]
     },
     {
+      "id":"1_5",
       "name": "Pad Thai",
       "image": "../images/pad-thai.jpg",
       "description": "A Thai stir-fried noodle dish.",
@@ -764,6 +752,7 @@
       ]
     },
     {
+      "id":"1_6",
       "name": "Beef Bourguignon",
       "image": "../images/beef-bourguignon.jpg",
       "description": "A French beef stew with red wine.",
@@ -783,6 +772,7 @@
       ]
     },
     {
+      "id":"1_7",
       "name": "Chicken Curry",
       "image": "../images/chicken-curry.jpg",
       "description": "A flavorful Indian curry with chicken.",
@@ -802,6 +792,7 @@
       ]
     },
     {
+      "id":"1_8",
       "name": "Lasagna",
       "image": "../images/lasagna.jpg",
       "description": "A classic Italian layered pasta dish.",
@@ -820,6 +811,7 @@
       ]
     },
     {
+      "id":"1_9",
       "name": "Fish and Chips",
       "image": "../images/fish-and-chips.jpg",
       "description": "A British classic with fried fish and fries.",
@@ -838,6 +830,7 @@
       ]
     },
     {
+      "id":"1_10",
       "name": "Paella",
       "image": "../images/paella.jpg",
       "description": "A Spanish rice dish with seafood and meat.",
@@ -856,6 +849,7 @@
       ]
     },
     {
+      "id":"1_11",
       "name": "Ramen",
       "image": "../images/ramen.jpg",
       "description": "A Japanese noodle soup dish.",
@@ -874,6 +868,7 @@
       ]
     },
     {
+      "id":"1_12",
       "name": "Moussaka",
       "image": "../images/moussaka.jpg",
       "description": "A Greek layered eggplant and meat dish.",
@@ -894,6 +889,7 @@
   ],
   "soups": [
     {
+      "id":"2_1",
       "name": "Tomato Soup",
       "image": "../images/tomato soup.jpg",
       "description": "A classic creamy tomato soup.",
@@ -914,6 +910,7 @@
       ]
     },
     {
+      "id":"2_2",
       "name": "Chicken Noodle Soup",
       "image": "../images/chicken noodels soup.jpg",
       "description": "A comforting chicken noodle soup.",
@@ -934,6 +931,7 @@
       ]
     },
     {
+      "id":"2_3",
       "name": "Minestrone Soup",
       "image": "../images/minestrone.jpg",
       "description": "A hearty Italian vegetable soup.",
@@ -953,6 +951,7 @@
       ]
     },
     {
+      "id":"2_4",
       "name": "French Onion Soup",
       "image": "../images/french onion soup.jpg",
       "description": "A rich and cheesy onion soup.",
@@ -971,6 +970,7 @@
       ]
     },
     {
+      "id":"2_5",
       "name": "Lentil Soup",
       "image": "../images/lentile.jpg",
       "description": "A hearty and healthy lentil soup.",
@@ -989,6 +989,7 @@
       ]
     },
     {
+      "id":"2_6",
       "name": "Clam Chowder",
       "image": "../images/clam chowder soup.jpg",
       "description": "A creamy and flavorful clam soup.",
@@ -1007,6 +1008,7 @@
       ]
     },
     {
+      "id":"2_7",
       "name": "Miso Soup",
       "image": "../images/miso soup.jpg",
       "description": "A traditional Japanese miso soup.",
@@ -1025,6 +1027,7 @@
       ]
     },
     {
+      "id":"2_8",
       "name": "Butternut Squash Soup",
       "image": "../images/butter squash soup.jpg",
       "description": "A creamy and comforting squash soup.",
@@ -1043,6 +1046,7 @@
       ]
     },
     {
+      "id":"2_9",
       "name": "Pho",
       "image": "../images/pho.jpg",
       "description": "A Vietnamese noodle soup.",
@@ -1061,6 +1065,7 @@
       ]
     },
     {
+      "id":"2_10",
       "name": "Gazpacho",
       "image": "../images/gazpacho.jpg",
       "description": "A refreshing cold Spanish soup.",
@@ -1078,6 +1083,7 @@
       ]
     },
     {
+      "id":"2_11",
       "name": "Cream of Mushroom Soup",
       "image": "../images/mushroom.jpg",
       "description": "A rich and creamy mushroom soup.",
@@ -1096,6 +1102,7 @@
       ]
     },
     {
+      "id":"2_12",
       "name": "Wonton Soup",
       "image": "../images/wonton.jpg",
       "description": "A light and flavorful Chinese soup.",
@@ -1117,6 +1124,7 @@
 
   "appetizers": [
     {
+      "id":"3_1",
       "name": "Bruschetta",
       "image": "../images/bruschetta.jpg",
       "description": "A classic Italian appetizer with fresh tomatoes, basil, and garlic on toasted baguette slices.",
@@ -1137,6 +1145,7 @@
       ]
     },
     {
+      "id":"3_2",
       "name": "Stuffed Mushrooms",
       "image": "../images/stuffed_mushrooms.jpg",
       "description": "Savory mushroom caps stuffed with a flavorful breadcrumb and Parmesan mixture.",
@@ -1156,6 +1165,7 @@
       ]
     },
     {
+      "id":"3_3",
       "name": "Spring Rolls",
       "image": "../images/spring_rolls.jpg",
       "description": "Crispy fried rolls filled with fresh cabbage, carrots, and bean sprouts.",
@@ -1175,6 +1185,7 @@
       ]
     },
     {
+      "id":"3_4",
       "name": "Deviled Eggs",
       "image": "../images/deviled_eggs.jpg",
       "description": "Creamy and tangy deviled eggs topped with paprika for extra flavor.",
@@ -1194,6 +1205,7 @@
       ]
     },
     {
+      "id":"3_5",
       "name": "Caprese Skewers",
       "image": "../images/caprese_skewers.jpg",
       "description": "Fresh cherry tomatoes, mozzarella, and basil on skewers drizzled with balsamic glaze.",
@@ -1211,6 +1223,7 @@
       ]
     },
     {
+      "id":"3_6",
       "name": "Spinach Dip",
       "image": "../images/spinach_dip.jpg",
       "description": "A creamy, cheesy spinach dip, perfect for serving with bread or crackers.",
@@ -1228,6 +1241,7 @@
       ]
     },
     {
+      "id":"3_7",
       "name": "Shrimp Cocktail",
       "image": "../images/shrimp_cocktail.jpg",
       "description": "Chilled shrimp served with a tangy homemade cocktail sauce.",
@@ -1244,6 +1258,7 @@
       ]
     },
     {
+      "id":"3_8",
       "name": "Cheese Platter",
       "image": "../images/cheese_platter.jpg",
       "description": "A selection of cheeses, fruits, and nuts for a perfect appetizer spread.",
@@ -1260,6 +1275,7 @@
       ]
     },
     {
+      "id":"3_9",
       "name": "Guacamole",
       "image": "../images/guacamole.jpg",
       "description": "A creamy avocado dip with fresh lime and a hint of spice.",
@@ -1277,6 +1293,7 @@
       ]
     },
     {
+      "id":"3_10",
       "name": "Chicken Wings",
       "image": "../images/chicken_wings.jpg",
       "description": "Crispy chicken wings tossed in a spicy, buttery sauce.",
@@ -1295,6 +1312,7 @@
       ]
     },
     {
+      "id":"3_11",
       "name": "Nachos",
       "image": "../images/nachos.jpg",
       "description": "Crispy tortilla chips topped with melted cheese and fresh toppings.",
@@ -1313,6 +1331,7 @@
       ]
     },
     {
+      "id":"3_12",
       "name": "Hummus",
       "image": "../images/hummus.jpg",
       "description": "A smooth and creamy chickpea dip with tahini and lemon.",
@@ -1332,6 +1351,7 @@
 
   "dessert": [
     {
+      "id":"4_1",
       "name": "Chocolate Cake",
       "image": "../images/choclate cake.jpg",
       "description": "A classic chocolate cake recipe.",
@@ -1351,6 +1371,7 @@
       ]
     },
     {
+      "id":"4_2",
       "name": "Cheesecake",
       "image": "../images/cheese cake.jpg",
       "description": "A creamy and delicious cheesecake recipe.",
@@ -1370,6 +1391,7 @@
       ]
     },
     {
+      "id":"4_3",
       "name": "Tiramisu",
       "image": "../images/Tiramisu2.jpg",
       "description": "A classic Italian tiramisu recipe.",
@@ -1389,6 +1411,7 @@
       ]
     },
     {
+      "id":"4_4",
       "name": "Red Velvet Cake",
       "image": "../images/red valvet.jpg",
       "description": "A vibrant red cake with cream cheese frosting.",
@@ -1409,6 +1432,7 @@
       ]
     },
     {
+      "id":"4_5",
       "name": "Apple Pie",
       "image": "../images/apple pie.jpg",
       "description": "A classic American dessert with a flaky crust and spiced apple filling.",
@@ -1428,6 +1452,7 @@
       ]
     },
     {
+      "id":"4_6",
       "name": "Lemon Tart",
       "image": "../images/lemon tart.jpg",
       "description": "A tangy and sweet dessert with a buttery crust.",
@@ -1447,6 +1472,7 @@
       ]
     },
     {
+      "id":"4_7",
       "name": "Chocolate Mousse",
       "image": "../images/chocolate mousse.jpg",
       "description": "A light and airy chocolate dessert.",
@@ -1465,6 +1491,7 @@
       ]
     },
     {
+      "id":"4_8",
       "name": "Strawberry Shortcake",
       "image": "../images/strawberry-shortcake.jpg",
       "description": "A light and fruity dessert with fresh strawberries and whipped cream.",
@@ -1484,6 +1511,7 @@
       ]
     },
     {
+      "id":"4_9",
       "name": "Crème Brûlée",
       "image": "../images/creme-brulee.jpg",
       "description": "A creamy custard dessert with a caramelized sugar topping.",
@@ -1503,6 +1531,7 @@
       ]
     },
     {
+      "id":"4_10",
       "name": "Panna Cotta",
       "image": "../images/Panna Cotta.jpg",
       "description": "A silky Italian dessert with a vanilla flavor and berry sauce.",
@@ -1522,6 +1551,7 @@
       ]
     },
     {
+      "id":"4_11",
       "name": "Macarons",
       "image": "../images/macarons.jpg",
       "description": "Delicate French cookies with a variety of fillings.",
@@ -1541,6 +1571,7 @@
       ]
     },
     {
+      "id":"4_12",
       "name": "Pavlova",
       "image": "../images/pavlova.jpg",
       "description": "A meringue-based dessert topped with fresh fruit and whipped cream.",
