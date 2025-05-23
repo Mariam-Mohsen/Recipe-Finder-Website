@@ -27,16 +27,53 @@ Recipe Finder is a full-stack Django web application that helps users explore an
 | Media     | Django `ImageField` for photo uploads |
 | Auth      | Django sessions with custom user roles |
 
-## Project Structure
+## Going Through the Website
 
-recipe_finder/
-├── recipes/           
-│   ├── models.py
-│   ├── views.py
-│   ├── templates/
-│   └── static/
-├── media/                   
-├── manage.py
+This section provides a visual walkthrough of the key features and pages in the Recipe Finder website.
+
+---
+
+### Homepage
+![Homepage](Screenshots/Home.png)
+
+The homepage welcomes users with a clean interface. It allows browsing by cuisine and category, encouraging exploration through an intuitive layout.
+
+---
+
+### User Page
+![User Profile](Screenshots/User.png)
+
+The profile page enables users to manage their personal information, update profile photos, and view saved favorite recipes.
+
+---
+
+### Admin Dashboard
+![Admin Dashboard](Screenshots/Admin.png)
+
+The admin dashboard is restricted to admin users. It provides full control over managing recipes, users, and recipe categories or cuisines.
+
+---
+
+## Website in Action
+
+Below are short preview clips demonstrating the website’s main functionalities.
+
+### User Flow
+[![User Flow Preview](Screenshots/User.png)](Screenshots/user.mp4)
+
+This demo shows a user navigating the site, exploring various recipes, and saving some to their favorites list.
+
+---
+
+### Cuisine Navigation
+[![Cuisine Navigation Preview](Screenshots/Cusines - frame at 0m0s.png)](screenshots/Cuisines.mp4)
+
+This video showcases how a user can switch between cuisines such as Egyptian, Indian, and Italian, and browse the corresponding recipes.
+
+---
+
+
+
 
 
 
