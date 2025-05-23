@@ -41,14 +41,14 @@ The homepage welcomes users with a clean interface. It allows browsing by cuisin
 ---
 
 ### User Page
-![User Profile](Screenshots/User.png)
+![User Profile](screenshots/User.png)
 
 The profile page enables users to manage their personal information, update profile photos, and view saved favorite recipes.
 
 ---
 
 ### Admin Dashboard
-![Admin Dashboard](Screenshots/Admin.png)
+![Admin Dashboard](screenshots/Admin.png)
 
 The admin dashboard is restricted to admin users. It provides full control over managing recipes, users, and recipe categories or cuisines.
 
