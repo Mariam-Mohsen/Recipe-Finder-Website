@@ -2,7 +2,6 @@
 
 Recipe Finder is a full-stack Django web application that helps users explore and manage a variety of recipes. The system supports both regular users and admin roles, offering features for browsing, saving, and managing recipes categorized by cuisine and dish type.
 
-## Features
 
 ## Project Overview
 
@@ -36,6 +35,8 @@ The platform is structured to support two user roles:
 - Uploadable profile pictures and recipe images
 - Data stored in **SQL Server** via Django's ORM
 
+
+## Features
 
 ### User Features
 - User registration and login with role selection (user or admin)
