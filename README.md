@@ -4,6 +4,39 @@ Recipe Finder is a full-stack Django web application that helps users explore an
 
 ## Features
 
+## Project Overview
+
+Recipe Finder is a full-stack web application built using Django and SQL Server. The platform is designed to help users explore, discover, and save recipes from a wide variety of cuisines and categories. It also includes a robust admin panel that allows authorized administrators to manage recipes, cuisines, categories, and user data.
+
+This system was created to serve as both a recipe recommendation platform and a learning project for implementing full-stack development principles using Django with SQL Server as the backend.
+
+The platform is structured to support two user roles:
+- **Regular Users**: who can sign up, browse and favorite recipes, and manage their personal profiles.
+- **Admins**: who have access to a management dashboard for controlling the recipe content and overseeing user interactions.
+
+### Objectives
+
+- Provide a user-friendly interface to browse categorized recipes.
+- Implement dynamic filtering by cuisine and dish type.
+- Allow users to personalize their experience with favorites and profile images.
+- Create a secure, admin-only dashboard for managing content.
+
+### Key Functional Highlights
+
+- Filter recipes by both **cuisine** (Egyptian, Indian, Italian, Mexican) and **dish type** (Main Dish, Soup, Appetizers, Dessert).
+- Store and display recipes with:
+  - Title
+  - Description
+  - Ingredients (multi-line)
+  - Steps
+  - Optional image
+- Role-based access:
+  - Admin login verification via `admin_id`
+  - Separate user/admin interface logic
+- Uploadable profile pictures and recipe images
+- Data stored in **SQL Server** via Django's ORM
+
+
 ### User Features
 - User registration and login with role selection (user or admin)
 - Browse recipes by cuisine: Egyptian, Italian, Indian, Mexican
@@ -54,23 +87,6 @@ The admin dashboard is restricted to admin users. It provides full control over 
 
 ---
 
-## Website in Action
-
-Below are short preview clips demonstrating the website’s main functionalities.
-
-### User Flow
-[![User Flow Preview](screenshots/User.png)](screenshots/user.mp4)
-
-This demo shows a user navigating the site, exploring various recipes, and saving some to their favorites list.
-
----
-
-### Cuisine Navigation
-![Cuisine Navigation Preview](screenshots/Cuisines.mp4)
-
-This video showcases how a user can switch between cuisines such as Egyptian, Indian, and Italian, and browse the corresponding recipes.
-
----
 
 
 
