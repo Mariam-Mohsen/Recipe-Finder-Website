@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appetizers</title>
+  <link rel="icon" type="image/png" href="{% static 'recipes/images/logo3.jpg' %}" />
+  <link rel="stylesheet" href="{% static 'recipes/css/Recipes.css' %}" />
+</head>
+<body style="background: url('{% static 'recipes/images/appetizers.jpg' %}') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  backdrop-filter: blur(10px);">
+
+  <nav>
+    <a href="{% url 'home' %}">
+      <img src="{% static 'recipes/images/home_icon.png' %}" alt="Home" class="home-icon" />
+    </a>
+    <a href="{% url 'profile' %}">
+      <img src="{% static 'recipes/images/user_avatar.png' %}" alt="Profile" class="user-icon" />
+    </a>
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        class="search-bar"
+        placeholder="Search for recipes..."
+      />
+    </div>
+    <ul>
+      <li><a href="{% url 'user_main_dish' %}">Main Dish</a></li>
+      <li><a href="{% url 'user_soup' %}">Soup</a></li>
+      <li><a href="{% url 'user_appetizers' %}">Appetizers</a></li>
+      <li><a href="{% url 'user_dessert' %}">Dessert</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h1>Appetizers</h1>
+    <div class="recipe-page" id="recipe-page">
+      {% for recipe in recipes %}
+        <div class="recipe-container">
+          <div class="recipe-image">
+            <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}" onerror="this.onerror=null;this.src='{% static 'recipes/images/default.jpg' %}';" />
+          </div>
+          <div class="recipe-content">
+            <h2>{{ recipe.title }}</h2>
+            <form method="post" action="{% url 'toggle_favorite' recipe.id %}" style="margin-bottom: 10px;" class="favorite-form">
+              {% csrf_token %}
+              <button type="button" class="favorite-btn">
+                {% if recipe.id in favorites %}
+                ❤️
+                {% else %}
+                🤍
+                {% endif %}
+              </button>
+            </form>
+
+            <div class="ingredients">
+              <h3>Ingredients:</h3>
+              <ul>
+                {% for ing in recipe.ingredients.splitlines %}
+                  <li>{{ ing }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="instructions">
+              <h3>Instructions:</h3>
+              <ol>
+                {% for step in recipe.instructions.splitlines %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <p>No recipes found.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const recipePage = document.getElementById('recipe-page');
+
+    searchInput.addEventListener('keyup', function () {
+      const query = this.value.trim();
+
+      fetch(`?search=${encodeURIComponent(query)}`, {
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        recipePage.innerHTML = '';
+
+        if (data.recipes.length === 0) {
+          recipePage.innerHTML = '<p style="color:white;">No recipes found.</p>';
+          return;
+        }
+
+        data.recipes.forEach(recipe => {
+          let ingredientsHtml = '<ul>';
+          (recipe.ingredients || []).forEach(line => {
+            ingredientsHtml += `<li>${line}</li>`;
+          });
+          ingredientsHtml += '</ul>';
+
+          let instructionsHtml = '<ol>';
+          (recipe.instructions || []).forEach(step => {
+            instructionsHtml += `<li>${step}</li>`;
+          });
+          instructionsHtml += '</ol>';
+
+          recipePage.innerHTML += `
+            <div class="recipe-container">
+              <div class="recipe-image">
+                <img src="${recipe.image_url}" alt="${recipe.title}" onerror="this.onerror=null;this.src='/static/recipes/images/default.jpg';" />
+              </div>
+              <div class="recipe-content">
+                <h2>${recipe.title}</h2>
+                <p><strong>Description:</strong> ${recipe.description}</p>
+                <div class="ingredients">
+                  <h3>Ingredients:</h3>
+                  ${ingredientsHtml}
+                </div>
+                <div class="instructions">
+                  <h3>Instructions:</h3>
+                  ${instructionsHtml}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.favorite-form').forEach(form => {
+      form.querySelector('button.favorite-btn').addEventListener('click', function() {
+        const formData = new FormData(form);
+        const url = form.action;
+
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+          },
+          body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'added') {
+            this.textContent = '❤️';
+          } else if (data.status === 'removed') {
+            this.textContent = '🤍';
+          }
+        })
+        .catch(error => {
+          console.error('Error toggling favorite:', error);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

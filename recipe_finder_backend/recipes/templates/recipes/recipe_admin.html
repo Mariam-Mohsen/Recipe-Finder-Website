@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Admin - Dashboard</title>
+    <link rel="icon" type="image/png" href="{% static 'recipes/images/logo3.jpg' %}">
+    <link rel="stylesheet" href="{% static 'recipes/css/recipe_admin.css' %}">
+</head>
+<body>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+    <nav>
+        <div class="logo">
+            <video autoplay loop muted>
+                <source src="{% static 'recipes/images/logo.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'add_recipe' %}">Add New Recipe</a></li>
+        </ul>
+    </nav>
+    <div class="admin-container">
+        <h2>Recipe Admin Dashboard</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="{% static 'recipes/images/main dish.jpg' %}" alt="Main Dish" class="category-image">
+                <h3>Main Dish</h3>
+                <a href="{% url 'main_dish' %}">View Recipes</a>
+            </div>
+            <div class="category-card">
+                <img src="{% static 'recipes/images/soup.jpg' %}" alt="Soup" class="category-image">
+                <h3>Soup</h3>
+                <a href="{% url 'soup' %}">View Recipes</a>
+            </div>
+            <div class="category-card">
+                <img src="{% static 'recipes/images/appetizers.jpg' %}" alt="Appetizers" class="category-image">
+                <h3>Appetizers</h3>
+                <a href="{% url 'appetizer' %}">View Recipes</a>
+            </div>
+            <div class="category-card">
+                <img src="{% static 'recipes/images/dessert.jpg' %}" alt="Dessert" class="category-image">
+                <h3>Dessert</h3>
+                <a href="{% url 'dessert' %}">View Recipes</a>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

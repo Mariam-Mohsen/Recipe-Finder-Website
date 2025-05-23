@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="{% static 'recipes/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'recipes/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'recipes/css/edit-profile.css' %}">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <video autoplay loop muted playsinline>
+        <source src="{% static 'recipes/images/logo.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      {% if user_profile.is_admin %}
+        <li><a href="{% url 'recipe_admin' %}">Admin Dashboard</a></li>
+      {% else %}
+        <li><a href="{% url 'user_main_dish' %}">Recipes</a></li>
+      {% endif %}
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="intro">
+  <div class="overlay"></div>
+  <div class="intro-content">
+    <main class="profile-container">
+      <h1>Edit Profile</h1>
+      <div class="profile-card">
+        <form method="post" action="{% url 'edit_profile' %}" class="edit-profile-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="photo">Profile Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" class="form-control" onchange="previewImage(event)">
+            <div class="image-preview-container">
+              {% with profile=user_profile %}
+              <img id="preview" src="{% if profile.photo %}{{ profile.photo.url }}{% else %}https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y{% endif %}" alt="Profile Photo Preview" class="profile-photo-preview">
+              {% endwith %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password" class="form-control">
+          </div>
+          <button type="submit" class="save-profile-btn">Save Changes</button>
+        </form>
+
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </main>
+  </div>
+</section>
+
+
+<script src="{% static 'recipes/js/edit-profile.js' %}"></script>
+</body>
+</html>

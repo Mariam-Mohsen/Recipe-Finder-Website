@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Recipe Finder</title>
+  <link rel="stylesheet" href="{% static 'recipes/css/sign up.css' %}">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <video autoplay loop muted playsinline>
+        <source src="{% static 'recipes/images/logo.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+
+    {% if messages %}
+      {% for message in messages %}
+        <script>alert("{{ message|escapejs }}");</script>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <label>Username:</label>
+      {{ form.username }}
+      <label>Email:</label>
+      {{ form.email }}
+      <label>Password:</label>
+      {{ form.password }}
+      <label>Confirm Password:</label>
+      {{ form.password2 }}
+      <label><input type="checkbox" name="is_staff"> Sign up as Admin</label>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Italian Cuisine - Recipe Finder</title>
+  <link rel="icon" type="image/png" href="{% static 'recipes/images/logo3.jpg' %}" />
+  <link rel="stylesheet" href="{% static 'recipes/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'recipes/css/cusines.css' %}" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <video autoplay loop muted playsinline>
+          <source src="{% static 'recipes/images/logo.mp4' %}" type="video/mp4" />
+        </video>
+      </div>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'user_main_dish' %}">Recipes</a></li>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Signup</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <section class="italian-cuisine">
+    <h1>Italian Cuisine</h1>
+    <div class="category" data-category="main course">
+      <h2>Main Course</h2>
+      <div class="meal-container">
+        {% for recipe in main_courses %}
+          <div class="meal">
+            <img src="{% static recipe.image_url %}" alt="{{ recipe.title }}" class="square-photo">
+            <h3>{{ recipe.title }}</h3>
+            <p>{{ recipe.description }}</p>
+            <div class="popup">
+              <h3>{{ recipe.title }} Recipe</h3>
+              <p><strong>Ingredients:</strong></p>
+              <ul>
+                {% for ing in recipe.ingredients.splitlines %}
+                  <li>{{ ing }}</li>
+                {% endfor %}
+              </ul>
+              <br>
+              <p><strong>Instructions:</strong></p>
+              <ol>
+                {% for step in recipe.instructions.splitlines %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        {% empty %}
+          <p>No main course recipes found.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="category" data-category="appetizers">
+      <h2>Appetizers</h2>
+      <div class="meal-container">
+        {% for recipe in appetizers %}
+          <div class="meal">
+            <img src="{% static recipe.image_url %}" alt="{{ recipe.title }}" class="square-photo">
+            <h3>{{ recipe.title }}</h3>
+            <p>{{ recipe.description }}</p>
+            <div class="popup">
+              <h3>{{ recipe.title }} Recipe</h3>
+              <p><strong>Ingredients:</strong></p>
+              <ul>
+                {% for ing in recipe.ingredients.splitlines %}
+                  <li>{{ ing }}</li>
+                {% endfor %}
+              </ul>
+              <br>
+              <p><strong>Instructions:</strong></p>
+              <ol>
+                {% for step in recipe.instructions.splitlines %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        {% empty %}
+          <p>No appetizer recipes found.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="category" data-category="soup">
+      <h2>Soup</h2>
+      <div class="meal-container">
+        {% for recipe in soups %}
+          <div class="meal">
+            <img src="{% static recipe.image_url %}" alt="{{ recipe.title }}" class="square-photo">
+            <h3>{{ recipe.title }}</h3>
+            <p>{{ recipe.description }}</p>
+            <div class="popup">
+              <h3>{{ recipe.title }} Recipe</h3>
+              <p><strong>Ingredients:</strong></p>
+              <ul>
+                {% for ing in recipe.ingredients.splitlines %}
+                  <li>{{ ing }}</li>
+                {% endfor %}
+              </ul>
+              <br>
+              <p><strong>Instructions:</strong></p>
+              <ol>
+                {% for step in recipe.instructions.splitlines %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        {% empty %}
+          <p>No soup recipes found.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="category" data-category="dessert">
+      <h2>Dessert</h2>
+      <div class="meal-container">
+        {% for recipe in desserts %}
+          <div class="meal">
+            <img src="{% static recipe.image_url %}" alt="{{ recipe.title }}" class="square-photo">
+            <h3>{{ recipe.title }}</h3>
+            <p>{{ recipe.description }}</p>
+            <div class="popup">
+              <h3>{{ recipe.title }} Recipe</h3>
+              <p><strong>Ingredients:</strong></p>
+              <ul>
+                {% for ing in recipe.ingredients.splitlines %}
+                  <li>{{ ing }}</li>
+                {% endfor %}
+              </ul>
+              <br>
+              <p><strong>Instructions:</strong></p>
+              <ol>
+                {% for step in recipe.instructions.splitlines %}
+                  <li>{{ step }}</li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        {% empty %}
+          <p>No dessert recipes found.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="{% static 'recipes/css/edit_recipe.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="logo">MyRecipes</div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'recipe_admin' %}">Admin dashboard</a></li>
+        </ul>
+    </nav>
+
+    <h2>Edit Recipe - {{ recipe.title }}</h2>
+    <div class="form-wrapper">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
