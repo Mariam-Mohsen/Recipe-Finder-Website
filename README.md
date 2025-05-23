@@ -34,7 +34,7 @@ This section provides a visual walkthrough of the key features and pages in the 
 ---
 
 ### Homepage
-![Homepage](Screenshots/Home.png)
+![Homepage](screenshots/Home.png)
 
 The homepage welcomes users with a clean interface. It allows browsing by cuisine and category, encouraging exploration through an intuitive layout.
 
