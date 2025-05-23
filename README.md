@@ -59,7 +59,7 @@ The admin dashboard is restricted to admin users. It provides full control over 
 Below are short preview clips demonstrating the website’s main functionalities.
 
 ### User Flow
-[![User Flow Preview](Screenshots/User.png)](Screenshots/user.mp4)
+[![User Flow Preview](screenshots/User.png)](screenshots/user.mp4)
 
 This demo shows a user navigating the site, exploring various recipes, and saving some to their favorites list.
 
