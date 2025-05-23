@@ -66,7 +66,7 @@ This demo shows a user navigating the site, exploring various recipes, and savin
 ---
 
 ### Cuisine Navigation
-[![Cuisine Navigation Preview](screenshots/cusines.png)](screenshots/Cuisines.mp4)
+[![Cuisine Navigation Preview](screenshots/cusines.png)](screenshots/Cuisines.gif)
 
 This video showcases how a user can switch between cuisines such as Egyptian, Indian, and Italian, and browse the corresponding recipes.
 
